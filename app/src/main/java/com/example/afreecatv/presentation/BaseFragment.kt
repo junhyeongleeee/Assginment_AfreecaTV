@@ -1,4 +1,4 @@
-package com.example.afreecatv
+package com.example.afreecatv.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
