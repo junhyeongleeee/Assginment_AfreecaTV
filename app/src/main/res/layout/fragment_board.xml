@@ -5,20 +5,20 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.afreecatv.presentation.main.tab.CategoryViewModel" />
+            type="com.example.afreecatv.presentation.main.tab.BoardViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.main.tab.CategoryFragment">
+        tools:context=".presentation.main.tab.BoardFragment">
 
         <TextView
             android:id="@+id/tv_category"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="30sp"
-            android:text="@{viewModel.category.category}"/>
+            android:text="@{viewModel.category.cateName}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

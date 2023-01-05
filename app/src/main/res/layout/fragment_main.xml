@@ -4,9 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="viewPager"
-            type="androidx.viewpager2.widget.ViewPager2" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +13,6 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tl_main"
-            setViewPager="@{viewPager}"
             style="@style/Widget.App.TabLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
