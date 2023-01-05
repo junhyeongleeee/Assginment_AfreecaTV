@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.example.afreecatv.presentation.main.tab.CategoryViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +17,8 @@
             android:id="@+id/tv_category"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:text="@{viewModel.category.category}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
