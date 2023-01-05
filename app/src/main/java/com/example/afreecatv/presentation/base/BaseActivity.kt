@@ -1,4 +1,4 @@
-package com.example.afreecatv.presentation
+package com.example.afreecatv.presentation.base
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes
