@@ -1,6 +1,5 @@
 package com.example.afreecatv.presentation.main.tab
 
-import android.util.Log
 import androidx.core.os.bundleOf
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.Lifecycle
@@ -9,10 +8,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.findNavController
 import androidx.paging.PagingData
-import androidx.paging.map
+import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.afreecatv.R
 import com.example.afreecatv.presentation.main.adapter.BroadAdapter
+import com.example.afreecatv.presentation.main.adapter.BroadLoadStateAdapter
 import com.example.afreecatv.presentation.main.model.BroadModel
 import com.example.afreecatv.presentation.main.tab.BroadFragment.Companion.KEY_BROAD
 import kotlinx.coroutines.flow.Flow
@@ -33,14 +33,19 @@ fun RecyclerView.initAdapter(
                     KEY_BROAD to model
                 )
             )
+        }.withLoadStateFooter(
+            footer = BroadLoadStateAdapter()
+        ).apply {
+            ConcatAdapter.Config.Builder().apply {
+                setIsolateViewTypes(false)
+            }.build()
         }
     }
 
     findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
         findViewTreeLifecycleOwner()?.repeatOnLifecycle(Lifecycle.State.STARTED) {
             broadFlow.collectLatest {
-                Log.d("RecyclerView", "initAdapter: ${it.map { it.broadNo }}")
-                (adapter as BroadAdapter).submitData(it)
+                ((adapter as ConcatAdapter).adapters[0] as BroadAdapter).submitData(it)
             }
         }
     }
