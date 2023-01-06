@@ -8,6 +8,19 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.afreecatv.presentation.main.MainFragment"
-        android:label="쇼핑"
-        tools:layout="@layout/fragment_main"/>
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailActivity"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"/>
+    </fragment>
+
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.example.afreecatv.presentation.detail.DetailActivity"
+        tools:layout="@layout/activity_detail"/>
+
 </navigation>

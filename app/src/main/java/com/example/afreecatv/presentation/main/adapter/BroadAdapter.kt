@@ -6,12 +6,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.RequestManager
 import com.example.afreecatv.R
 import com.example.afreecatv.databinding.ItemBroadBinding
+import com.example.afreecatv.presentation.main.model.BroadModel
 
 class BroadAdapter(
-    val requestManager: RequestManager
+    private val onClick: (BroadModel?) -> Unit
 ) :
     PagingDataAdapter<BroadModel, BroadAdapter.BroadModelViewHolder>(broadDiffUtil) {
 
@@ -34,7 +34,9 @@ class BroadAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: BroadModel) {
             binding.broadItem = item
-            binding.requestManager = requestManager
+            binding.root.setOnClickListener {
+                onClick(getItem(bindingAdapterPosition))
+            }
         }
     }
 
