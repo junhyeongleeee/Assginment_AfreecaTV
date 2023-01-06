@@ -3,4 +3,6 @@
     <string name="tookCam">토크/캠방</string>
     <string name="travel">여행</string>
     <string name="eatCook">먹방/쿡방</string>
+    <integer name="radius_500">50</integer>
+    <integer name="radius_100">10</integer>
 </resources>
