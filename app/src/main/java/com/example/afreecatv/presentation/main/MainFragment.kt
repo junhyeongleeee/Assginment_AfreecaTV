@@ -33,7 +33,10 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
     }
 
     private fun initViewPager(categoryList: List<Category>) {
-        binding.vpMain.adapter = MainPagerAdapter(categoryList, requireActivity())
+        binding.vpMain.apply {
+            adapter = MainPagerAdapter(categoryList, requireActivity())
+            offscreenPageLimit = 2
+        }
         TabLayoutMediator(binding.tlMain, binding.vpMain) { tab, position ->
             tab.text = categoryList[position].cateName
         }.attach()
