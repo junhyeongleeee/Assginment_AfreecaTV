@@ -1,4 +1,4 @@
-package com.example.afreecatv.data.broad
+package com.example.afreecatv.data.board
 
 import com.google.gson.annotations.SerializedName
 
@@ -6,11 +6,11 @@ data class BroadResponse(
     @SerializedName("total_cnt") val totalCnt: Int,
     @SerializedName("page_no") val pageNo: Int,
     @SerializedName("page_block") val pageBlock: Int,
-    @SerializedName("broad") val broadModel: List<BroadModel>,
+    @SerializedName("broad") val broad: List<Broad>,
     @SerializedName("time") val time: Int
 )
 
-data class BroadModel(
+data class Broad(
     @SerializedName("broad_title") val broadTitle: String,
     @SerializedName("visit_broad_type") val visitBroadType: String,
     @SerializedName("is_password") val isPassword: String,
@@ -24,4 +24,21 @@ data class BroadModel(
     @SerializedName("broad_grade") val broadGrade: String,
     @SerializedName("broad_resolution") val broadResolution: String,
     @SerializedName("total_view_cnt") val totalViewCnt: String
-)
+) {
+    fun toBroadEntity() =
+        BroadEntity(
+            broadTitle,
+            visitBroadType,
+            isPassword,
+            broadCateNo,
+            broadNo,
+            userId,
+            userNick,
+            profileImg,
+            broadThumb,
+            broadStart,
+            broadGrade,
+            broadResolution,
+            totalViewCnt
+        )
+}
