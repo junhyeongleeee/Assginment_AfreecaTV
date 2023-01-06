@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="broadItem"
+            type="com.example.afreecatv.presentation.main.adapter.BroadModel" />
+
+        <variable
+            name="requestManager"
+            type="com.bumptech.glide.RequestManager" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <ImageView
+            android:id="@+id/iv_broad"
+            setRequestManager="@{requestManager}"
+            setUrl="@{broadItem.broadThumb}"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl_start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_broad_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@{broadItem.broadTitle}"
+            android:textSize="15sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/iv_broad"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="안녕하세요" />
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            setRequestManager="@{requestManager}"
+            setUrl="@{broadItem.profileImg}"
+            app:layout_constraintTop_toBottomOf="@id/tv_broad_title"
+            app:layout_constraintStart_toStartOf="@id/tv_broad_title"/>
+
+        <TextView
+            android:id="@+id/tv_user_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{broadItem.userNick}"
+            android:textSize="13sp"
+            android:layout_marginStart="5dp"
+            tools:text="wefwe"
+            app:layout_constraintTop_toTopOf="@id/iv_profile"
+            app:layout_constraintStart_toEndOf="@id/iv_profile"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
