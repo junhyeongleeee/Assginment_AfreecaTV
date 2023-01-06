@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="@dimen/small_50">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_start"
@@ -26,7 +26,7 @@
             android:id="@+id/iv_broad"
             setUrl="@{broadItem.broadThumb}"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/size_broad_img"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="@id/gl_start"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,11 +36,13 @@
             android:id="@+id/tv_broad_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginStart="@dimen/small_100"
+            android:layout_marginTop="@dimen/small_25"
+            android:layout_marginEnd="@dimen/small_100"
             android:ellipsize="end"
             android:maxLines="2"
             android:text="@{broadItem.broadTitle}"
-            android:textSize="15sp"
+            android:textSize="@dimen/text_size_100"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_broad"
             app:layout_constraintTop_toTopOf="parent"
@@ -50,9 +52,9 @@
             android:id="@+id/iv_profile"
             setRadius="@{@integer/radius_500}"
             setUrl="@{broadItem.profileImg}"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="@dimen/large_125"
+            android:layout_height="@dimen/large_125"
+            android:layout_marginTop="@dimen/small_100"
             app:layout_constraintStart_toStartOf="@id/tv_broad_title"
             app:layout_constraintTop_toBottomOf="@id/tv_broad_title" />
 
@@ -62,16 +64,16 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:text="@{broadItem.userNick}"
-            android:textSize="13sp"
+            android:textSize="@dimen/text_size_75"
             app:layout_constraintStart_toEndOf="@id/iv_profile"
             app:layout_constraintTop_toTopOf="@id/iv_profile"
             tools:text="wefwe" />
 
         <ImageView
             android:id="@+id/iv_people"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="@dimen/normal_100"
+            android:layout_height="@dimen/normal_100"
+            android:layout_marginTop="@dimen/small_25"
             android:src="@drawable/ic_people"
             app:layout_constraintStart_toStartOf="@id/tv_user_nick"
             app:layout_constraintTop_toBottomOf="@id/tv_user_nick" />
@@ -80,9 +82,9 @@
             android:id="@+id/tv_total_view_cnt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="@dimen/small_25"
             android:text="@{broadItem.totalViewCnt}"
-            android:textSize="13sp"
+            android:textSize="@dimen/text_size_75"
             app:layout_constraintStart_toEndOf="@id/iv_people"
             app:layout_constraintTop_toTopOf="@id/iv_people"
             tools:text="wefwe" />

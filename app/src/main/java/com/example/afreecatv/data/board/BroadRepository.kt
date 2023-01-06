@@ -1,7 +1,9 @@
 package com.example.afreecatv.data.board
 
-import android.util.Log
-import androidx.paging.*
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.map
 import com.example.afreecatv.data.AfreecaTVService
 import com.example.afreecatv.data.category.Category
 import com.example.afreecatv.presentation.main.model.BroadModel
@@ -17,8 +19,6 @@ class BroadRepositoryImpl(
 ) : BroadRepository {
 
     override fun getBroadList(category: Category): Flow<PagingData<BroadModel>> {
-        Log.d("BoardRepository", "getBoardList: ${category.cateNo}")
-
         return Pager(config = PagingConfig(pageSize = BroadPagingSource.PAGING_SIZE)) {
             BroadPagingSource(category.cateNo, api)
         }.flow.map { pagingData ->

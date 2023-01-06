@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_25">2dp</dimen>
+    <dimen name="small_50">4dp</dimen>
+    <dimen name="small_100">8dp</dimen>
+
+    <dimen name="normal_100">16dp</dimen>
+    <dimen name="normal_125">20dp</dimen>
+    <dimen name="normal_150">24dp</dimen>
+    <dimen name="normal_175">28dp</dimen>
+
+    <dimen name="large_100">32dp</dimen>
+    <dimen name="large_125">40dp</dimen>
+    <dimen name="large_150">48dp</dimen>
+    <dimen name="large_175">56dp</dimen>
+    <dimen name="large_200">64dp</dimen>
+    <dimen name="size_broad_img">100dp</dimen>
+
+    <dimen name="text_size_50">8sp</dimen>
+    <dimen name="text_size_75">12sp</dimen>
+    <dimen name="text_size_100">16sp</dimen>
+    <dimen name="text_size_125">20sp</dimen>
+    <dimen name="text_size_150">24sp</dimen>
+    <dimen name="text_size_200">32sp</dimen>
+</resources>

@@ -26,23 +26,6 @@ data class Broad(
     @SerializedName("broad_resolution") val broadResolution: String,
     @SerializedName("total_view_cnt") val totalViewCnt: String
 ) {
-    fun toBroadEntity() =
-        BroadEntity(
-            broadTitle,
-            visitBroadType,
-            isPassword,
-            broadCateNo,
-            broadNo,
-            userId,
-            userNick,
-            profileImg,
-            broadThumb,
-            broadStart,
-            broadGrade,
-            broadResolution,
-            totalViewCnt
-        )
-
     fun toBroadModel() =
         BroadModel(
             broadTitle,
