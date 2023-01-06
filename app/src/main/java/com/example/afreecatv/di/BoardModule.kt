@@ -3,6 +3,7 @@ package com.example.afreecatv.di
 import com.example.afreecatv.data.AfreecaTVService
 import com.example.afreecatv.data.board.BoardRepository
 import com.example.afreecatv.data.board.BoardRepositoryImpl
+import com.example.afreecatv.data.board.BroadDB
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,6 +17,7 @@ object BoardModule {
     @Provides
     @Singleton
     fun provideBoardRepository(
+        db: BroadDB,
         api: AfreecaTVService
-    ): BoardRepository = BoardRepositoryImpl(api)
+    ): BoardRepository = BoardRepositoryImpl(db, api)
 }
