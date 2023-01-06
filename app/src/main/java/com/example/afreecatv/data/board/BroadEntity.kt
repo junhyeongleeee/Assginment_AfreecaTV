@@ -2,7 +2,7 @@ package com.example.afreecatv.data.board
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.afreecatv.presentation.main.adapter.BroadModel
+import com.example.afreecatv.presentation.main.model.BroadModel
 
 @Entity(tableName = "broad")
 data class BroadEntity(

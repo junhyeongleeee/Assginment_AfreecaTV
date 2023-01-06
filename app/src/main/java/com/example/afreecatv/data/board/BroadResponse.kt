@@ -1,5 +1,6 @@
 package com.example.afreecatv.data.board
 
+import com.example.afreecatv.presentation.main.model.BroadModel
 import com.google.gson.annotations.SerializedName
 
 data class BroadResponse(
@@ -27,6 +28,23 @@ data class Broad(
 ) {
     fun toBroadEntity() =
         BroadEntity(
+            broadTitle,
+            visitBroadType,
+            isPassword,
+            broadCateNo,
+            broadNo,
+            userId,
+            userNick,
+            profileImg,
+            broadThumb,
+            broadStart,
+            broadGrade,
+            broadResolution,
+            totalViewCnt
+        )
+
+    fun toBroadModel() =
+        BroadModel(
             broadTitle,
             visitBroadType,
             isPassword,

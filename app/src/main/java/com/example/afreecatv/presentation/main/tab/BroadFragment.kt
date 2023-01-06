@@ -1,8 +1,8 @@
 package com.example.afreecatv.presentation.main.tab
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.viewModels
-import com.bumptech.glide.Glide
 import com.example.afreecatv.R
 import com.example.afreecatv.data.category.Category
 import com.example.afreecatv.databinding.FragmentBroadBinding
@@ -10,20 +10,25 @@ import com.example.afreecatv.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BoardFragment : BaseFragment<FragmentBroadBinding>(R.layout.fragment_broad) {
+class BroadFragment : BaseFragment<FragmentBroadBinding>(R.layout.fragment_broad) {
 
-    private val viewModel: BoardViewModel by viewModels()
+    private val viewModel: BroadViewModel by viewModels()
 
     override fun initView() {
         binding.viewModel = viewModel
-        binding.requestManager = Glide.with(this)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("BoardFragment", "onStart ")
     }
 
     companion object {
 
         const val KEY_CATEGORY = "category"
+        const val KEY_BROAD = "broad"
 
-        fun newInstance(category: Category) = BoardFragment().apply {
+        fun newInstance(category: Category) = BroadFragment().apply {
             arguments = Bundle().apply {
                 putParcelable(KEY_CATEGORY, category)
             }
