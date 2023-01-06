@@ -1,6 +1,5 @@
 package com.example.afreecatv.util
 
-import android.util.Log
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -15,7 +14,6 @@ private val factory = DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(tru
 fun ImageView.loadImage(imageUrl: String?) {
     imageUrl ?: return
 
-    Log.d("ImageView", "loadImage: $imageUrl")
     Glide.with(this)
         .load(imageUrl)
         .transition(DrawableTransitionOptions.withCrossFade(factory))

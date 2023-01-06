@@ -2,7 +2,6 @@ package com.example.afreecatv.data.board
 
 import android.util.Log
 import androidx.paging.*
-import com.boostcamp.dailyfilm.data.selectvideo.BroadPagingSource
 import com.example.afreecatv.data.AfreecaTVService
 import com.example.afreecatv.data.category.Category
 import com.example.afreecatv.presentation.main.model.BroadModel

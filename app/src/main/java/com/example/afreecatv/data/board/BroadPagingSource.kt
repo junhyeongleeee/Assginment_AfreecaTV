@@ -1,9 +1,8 @@
-package com.boostcamp.dailyfilm.data.selectvideo
+package com.example.afreecatv.data.board
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.afreecatv.data.AfreecaTVService
-import com.example.afreecatv.data.board.Broad
 import java.io.IOException
 
 class BroadPagingSource(
