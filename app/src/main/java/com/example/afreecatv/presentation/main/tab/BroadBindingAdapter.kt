@@ -26,14 +26,14 @@ fun RecyclerView.initAdapter(
     if (adapter == null) {
         adapter = BroadAdapter { model ->
             model ?: return@BroadAdapter
-
             findNavController().navigate(
                 R.id.action_mainFragment_to_detailFragment,
                 bundleOf(
                     KEY_BROAD to model
                 )
             )
-        }.withLoadStateFooter(
+        }.withLoadStateHeaderAndFooter(
+            header = BroadLoadStateAdapter(),
             footer = BroadLoadStateAdapter()
         ).apply {
             ConcatAdapter.Config.Builder().apply {
@@ -45,7 +45,7 @@ fun RecyclerView.initAdapter(
     findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
         findViewTreeLifecycleOwner()?.repeatOnLifecycle(Lifecycle.State.STARTED) {
             broadFlow.collectLatest {
-                ((adapter as ConcatAdapter).adapters[0] as BroadAdapter).submitData(it)
+                ((adapter as ConcatAdapter).adapters[1] as BroadAdapter).submitData(it)
             }
         }
     }
