@@ -2,7 +2,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data></data>
+    <data>
+
+        <variable
+            name="activity"
+            type="androidx.fragment.app.FragmentActivity" />
+
+        <variable
+            name="viewModel"
+            type="com.example.afreecatv.presentation.main.MainViewModel" />
+
+        <variable
+            name="tabLayout"
+            type="com.google.android.material.tabs.TabLayout" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -36,6 +49,9 @@
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_main"
+            setActivity="@{activity}"
+            setTabLayout="@{tabLayout}"
+            setViewModel="@{viewModel}"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:saveEnabled="false"

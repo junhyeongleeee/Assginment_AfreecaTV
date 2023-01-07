@@ -9,9 +9,9 @@ interface AfreecaTVService {
     @GET(Url.BOARD_LIST_URL)
     suspend fun getBoardList(
         @Query("client_id") clientId: String = Url.CLIENT_ID,
-        @Query("select_key") selectKey: String = "cate",
+        @Query("select_key") selectKey: String = Url.SECRET_KEY,
         @Query("select_value") selectValue: String,
-        @Query("page_no") pageNo: Int = 1
+        @Query("page_no") pageNo: Int
     ): BroadResponse
 
     @GET(Url.CATEGORY_LIST_URL)
