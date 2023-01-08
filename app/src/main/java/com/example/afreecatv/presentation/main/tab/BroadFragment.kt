@@ -1,7 +1,6 @@
 package com.example.afreecatv.presentation.main.tab
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.viewModels
 import com.example.afreecatv.R
 import com.example.afreecatv.data.category.Category
@@ -16,11 +15,6 @@ class BroadFragment : BaseFragment<FragmentBroadBinding>(R.layout.fragment_broad
 
     override fun initView() {
         binding.viewModel = viewModel
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("BoardFragment", "onStart ")
     }
 
     companion object {
