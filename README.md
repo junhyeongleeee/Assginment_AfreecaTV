@@ -10,6 +10,33 @@ Paging3, RecyclerView, ViewPager2, Hilt, Glide, MVVM, DataBinding, Navigation, V
 MVVM 패턴을 사용하여 Model과 View의 관심사를 분리시키고 AAC ViewModel이 MVVM의 ViewModel 역할을 하도록구현하였습니다.
 따라서 ViewModel은 Hilt 라이브러리를 사용하여 Repository를 주입받고 Repository는 네트워크 통신을 위해 Retrofit요청 메소드가 존재하는 인터페이스를 주입받습니다.
 Repository에게 전달 받은 데이터는 데이터스트림 형태로 바뀌고 MVVM의 의도에 맞게 DataBinding을 통해 동기화하여 화면을 업데이트합니다. 따라서 Activity, Fragment의 코드를 최소화 할 수 있었습니다.
+### 최소화된 BroadFragment 코드
+**BroadFragment**
+
+```kotlin
+@AndroidEntryPoint
+class BroadFragment : BaseFragment<FragmentBroadBinding>(R.layout.fragment_broad) {
+
+    private val viewModel: BroadViewModel by viewModels()
+
+    override fun initView() {
+        binding.viewModel = viewModel
+    }
+
+    companion object {
+
+        const val KEY_CATEGORY = "category"
+        const val KEY_BROAD = "broad"
+
+        fun newInstance(category: Category) = BroadFragment().apply {
+            arguments = Bundle().apply {
+                putParcelable(KEY_CATEGORY, category)
+            }
+        }
+    }
+
+}
+```
 
 # 메모리, 성능 등 최적화
 
